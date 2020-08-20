@@ -20,7 +20,7 @@ console.log(colors[colors.length-1]);
 colors[0] = "black";
 
 // 8. Write one line of code that changes the value of the last color in the list to "ultraviolet" (overwriting the previous value).
-colors[colors.length] = "ultraviolet";
+colors[colors.length -1] = "ultraviolet";
 
 // 9. Now, Find the length of the array named `colors`.
 console.log(colors.length);
@@ -35,22 +35,25 @@ colors[colors.length] = "pink";
 colors.unshift("gray");
 
 // 13. Remove the first color from the starting of the array
-colors.shift();
+delete colors[0];
 
 // 14. Remove the last color from the end of list, and then print the length of the array to the console one more time.
-colors.pop();
+delete colors[colors.length - 1];
+console.log(colors.length);
 
 // 15. Remove the second color from the end of list.
-delete colors[1];
+delete colors[colors.length - 2];
 
 // 16. Write a for loop to iterate through every element in the array and print each element to the console.
-for(i = 0; i < colors.length; i++){
+for(let i = 0; i < colors.length; i++){
     console.log(colors[i]);
 }
+
 // 17. Copying from that loop you just wrote, modify it to print every color's value and every color's index in this format: 3, purple or 0, blue etc.
-for(i = 0; i < colors.length; i++){
-    console.log(i, colors[i]);
+for(let i = 0; i < colors.length; i++){
+    console.log(`${i} : ${colors[i]}`);
 }
+
 // 18. Write a for..of loop to iterate through every element in the array and print each element to the console.
 for(let color of colors) {
     console.log(color);
